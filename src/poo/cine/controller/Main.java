@@ -15,10 +15,11 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  * @author joaquinleonelrobles
  */
 public class Main {
+     private SessionFactory sessionFactory = null;
     
     public static void main (String[] args) {
-        SessionFactory sessionFactory = null;
-        
+       
+       Main principal = new Main(); 
         // A SessionFactory is set up once for an application!
 	final StandardServiceRegistry registry = new StandardServiceRegistryBuilder()
 			.configure("resources/hibernate.cfg.xml") // configures settings from hibernate.cfg.xml
@@ -34,7 +35,7 @@ public class Main {
             StandardServiceRegistryBuilder.destroy( registry );
 	}
         
-        new GestorPelicula(sessionFactory).run();
+        //new GestorPelicula(sessionFactory).run();
     }
     
 }
